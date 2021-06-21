@@ -1,0 +1,57 @@
+.borderSection{
+    border-bottom: 2px solid black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+.borderTop{
+    border-top: 2px solid black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+body{
+    background-color:burlywood;
+}
+
+h1 {
+    color: rgb(8, 12, 8);
+}
+
+h3{
+    color: red;
+    }
+p{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+ }
+
+ ul{
+     color:darkblue
+ }
+
+ table{ border-color: black;
+     color: rgb(32, 24, 24);
+      }
+      tr {
+          color:rgb(32, 8, 36)
+      }
+
+.tamañoImagen{
+    width: 175px;
+}
+.tamañoPersonalizado{
+    width: 150px;
+}
+
+.fuenteNueva{ 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: "normal";
+    font-weight: "bold";
+    font-size: 20px
+ }
+
+.iconos{
+     height: 50px;
+     width: 50px;
+ }
