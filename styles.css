@@ -11,7 +11,7 @@
 }
 
 body{
-    background-color:burlywood;
+    background-color: burlywood;
 }
 
 h1 {
@@ -54,4 +54,8 @@ p{
 .iconos{
      height: 50px;
      width: 50px;
+ }
+.margenLink{
+    margin-right: 15px;
+    text-decoration: none;
  }
