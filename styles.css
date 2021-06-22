@@ -4,12 +4,25 @@
     font-size: 15px;
 }
 
-.borderTop{
+.footer{
+    display:flex;
+    justify-content:space-evenly;
     border-top: 2px solid black;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
 }
-
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.formulario{
+    display:flex;
+    flex-direction: column;
+}
+.botones{
+    display:flex;
+}
 body{
     background-color: burlywood;
 }
@@ -36,7 +49,16 @@ p{
       tr {
           color:rgb(32, 8, 36)
       }
-
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.flexTortas{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+}
 .tamañoImagen{
     width: 175px;
 }
