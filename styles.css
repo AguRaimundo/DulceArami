@@ -37,18 +37,18 @@ h3{
 p{
     font-family: 'Source Sans Pro', sans-serif;
     color: black;
- }
+}
 
- ul{
-     color:darkblue
- }
+ul{
+    color:darkblue
+}
 
- table{ border-color: black;
-     color: rgb(32, 24, 24);
-      }
-      tr {
-          color:rgb(32, 8, 36)
-      }
+table{ border-color: black;
+    color: rgb(32, 24, 24);
+    }
+    tr {
+    color:rgb(32, 8, 36)
+    }
 .header{
     display:flex;
     justify-content: space-between;
@@ -71,13 +71,91 @@ p{
     font-style: "normal";
     font-weight: "bold";
     font-size: 20px
- }
-
+}
 .iconos{
-     height: 50px;
-     width: 50px;
- }
+    height: 50px;
+    width: 50px;
+}
 .margenLink{
-    margin-right: 15px;
     text-decoration: none;
- }
+}
+
+/* aca arranca el nav */
+
+.navbar {
+    overflow: hidden;
+    background-color: white; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar a {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+  }
+  
+/* .subnav {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .subnav .subnavbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  } */
+  
+/*   .navbar a:hover, .subnav:hover .subnavbtn {
+    border-bottom:thin solid red;
+    color: red;
+  } */
+  
+  /* .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  .subnav:hover .subnav-content {
+    display: block;
+} */
+.linea{
+    border-bottom:1px solid red;
+    
+}
+.flexdiv{
+    display:flex;
+    flex-direction:column;
+    width: 20%;
+    margin-bottom: inherit;
+}
+.alineacion{
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+
+
+/* Linea mas ancha que la palabra  margin bottom*/
