@@ -9,33 +9,126 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="margenLink"> <img src="../DulceArami/assets/LogoDulceArami.png" alt="Logo del emprendimiento" style="width:110px;height:110px" > </a>
-            <nav style="display: inline;">
-                <a href="acerca.html" class="margenLink"> Acerca</a>
-                <a href="productos.html" class="margenLink">Productos</a>
-                <a href="pedidos.html" class="margenLink">Pedido</a>
-                <a href="contacto.html" class="margenLink">Contacto</a>
-            </nav>
+        <div class="navbar">
+            <a href="index.html" class="margenLink"> <img src="../DulceArami/assets/LogoDulceArami.png" alt="Logo del emprendimiento" style="width:110px;height:110px" > </a>
+        <div class="alineacion">
+            <div class="flexDiv">
+                <a href="acerca.html" class="margenLink">Acerca</a>
+                <div class="linea"></div>
+            </div>
+        <div class="flexDiv">
+            <a href="pedidos.html" class="margenLink">Pedido</a>
+            <div class="linea"></div>
+        </div>
+        <div class="flexDiv">
+            <a href="productos.html" class="margenLink">Productos</a>   
+            <div class="linea"></div>     
+        </div>
+        <div class="flexDiv">    
+            <a href="contacto.html" class="margenLink">Contacto</a>
+            <div class="linea"></div>
+        </div>
+        </div>
+    </div>
     </header>
     <main>
-        <section>
-            <div style="border: thin solid black; border-radius: 5px;">
-                <img src="../DulceArami/assets/Chocotorta.jpg" alt="Porcion de chocotorta" />
+    <h3>Tortas</h3>
+    <section class="pedidosFlex">
+    <div>
+        <p>Chocotorta</p>
+        <a href="pedidos.html"> <img src="assets/Chocotorta.jpg" class="tamañoImagen" alt="Porcion de Chocotorta"></a>
+            <div>
+                <form>
+                    <h5>2200$</h5>
+                    <input type "text" name="Chocotorta" placeholder="Cantidad">
+                    <div class="botones">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
+                </div>
+                </form>
             </div>
-            <div style="border: thin solid black; border-radius: 5px;">
-                <img src="../DulceArami/assets/TortaFrutal.jpeg" alt="Torta Frutal" />
+    </div>
+    <div>
+        <p>Torta Frutal</p>
+        <a href="pedidos.html"> <img src="assets/Tortafrutal.jpeg"class="tamañoImagen" alt="TortaFrutal"></a>
+            <div>
+                <form>
+                    <h5>1650$</h5>
+                    <input type "text" name="Tortafrutal" placeholder="Cantidad">
+                    <div class="botones">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
+                    </div>
+                </form>
             </div>
-            <div style="border: thin solid black; border-radius: 5px;">
-                <img src="../DulceArami/assets/LemonPiee.jpeg" alt="" />
-            </div>
-        </section>
+    </div>
+    </section>
+    <section class="pedidosFlex">
+        <div>
+            <p>Selva Negra</p>
+            <a href="pedidos.html"> <img src="assets/Selva negra.jpg" class="tamañoImagen" alt="Selva Negra"></a>
+                    <div>
+                        <form>
+                            <h5>2000$</h5>
+                            <input type "text" name="Selva negra" placeholder="Cantidad">
+                            <div class="botones">
+                            <input type="submit" value="Enviar">
+                            <input type="reset" value="Borrar">
+                            </div>
+                        </form>
+                </div>
+        </div>
+        <div>
+            <p>Lemon Pie</p>
+            <a href="pedidos.html"> <img src="assets/lemon-pie.jpg" class="tamañoImagen" alt="lemon-pie"></a>
+                <div>
+                    <form>
+                    <h5>1700$</h5>
+                    <input type "text" name="lemon-pie" placeholder="Cantidad">
+                    <div class="botones">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
+                    </div>
+                    </form>
+                </div>
+        </div>
+    </section>
+    <h3>Tortas Personalizadas</h3>
+    <section class="pedidosFlex">
+        <div>
+            <a href="pedidos.html"> <img src="assets/TortaPersonalizadadearandanos.jpeg" class="tamañoImagen" alt="Porcion de Chocotorta"></a>
+                <div>
+                <form>
+                <h5>2500$</h5>
+                <input type "text" name="Chocotorta" placeholder="Cantidad">
+                <div class="botones">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
+                </div>
+                </form>
+                </div>
+        </div>
+        <div>
+            <a href="pedidos.html"> <img src="assets/Recortefrutosrojos.jpeg" class="tamañoImagen" alt="Porcion de Chocotorta"></a>
+                <div>
+                <form>
+                <h5>2500$</h5>
+                <input type "text" name="Chocotorta" placeholder="Cantidad">
+                <div class="botones">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
+                </div>
+                </form>
+                </div>
+        </div>
+    </section>
     </main>
     <footer class="footer">
-         <ion-icon name="logo-whatsapp" class="iconos"></ion-icon >
-         <ion-icon name="logo-instagram" class="iconos"></ion-icon >
-         <ion-icon name="logo-facebook" class="iconos"></ion-icon > 
+        <ion-icon name="logo-whatsapp" class="iconos"></ion-icon >
+        <ion-icon name="logo-instagram" class="iconos"></ion-icon >
+        <ion-icon name="logo-facebook" class="iconos"></ion-icon > 
     </footer>
-     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!--La idea es que la gente aca vea lo que puede pedir-->
 </body>
 </html>
