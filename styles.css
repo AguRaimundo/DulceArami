@@ -2,41 +2,23 @@ body{
     margin:0;
     background-color:burlywood
 }
-.indexFlex{
-    display:flex;
-    justify-content: space-evenly;
-}
-.borderSection{
-    border-bottom: 2px solid black;
+.fuenteNueva{ 
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 15px;
+    font-style: "normal";
+    font-weight: "bold";
+    font-size: 20px
 }
-.footer{
+.navbar {
+    overflow: hidden;
+    background-color: white;
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 40px;
-    border-top: 2px solid black;
+    justify-content: space-between;
+    align-items: center;
 }
-.footeer{
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    border-top: 2px solid black;
-}
-.containers{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
-.formulario{
-    display:flex;
-    flex-direction: column;
-}
-.botones{
-    display:flex;
+.navbar a {
+    font-size: 20px;
+    color: black;
+    text-align: center;
 }
 h1 {
     color: rgb(8, 12, 8);
@@ -50,15 +32,27 @@ p{
     font-family: 'Source Sans Pro', sans-serif;
     color: black;
 }
-ul{
-    color:darkblue
+.borderSection{
+    border-bottom: 2px solid black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
 }
-table{ border-color: black;
-    color: rgb(32, 24, 24);
-    }
-    tr {
-    color:rgb(32, 8, 36)
-    }
+.indexFlex{
+    display:flex;
+    justify-content: space-evenly;
+}
+.containers{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.formulario{
+    display:flex;
+    flex-direction: column;
+}
+.botones{
+    display:flex;
+}
 .flexTortas{
     display: flex;
     justify-content: space-evenly;
@@ -85,18 +79,6 @@ table{ border-color: black;
 }
 .margenLink:hover{
     color: red
-}
-.navbar {
-    overflow: hidden;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar a {
-    font-size: 20px;
-    color: black;
-    text-align: center;
 }
 .flexDiv{
     display:flex;
@@ -162,7 +144,6 @@ table{ border-color: black;
 }
 .Foto { grid-area: Foto; }
 .lista { grid-area: lista; }
-
 .container1 {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
@@ -173,21 +154,39 @@ table{ border-color: black;
     "Torta-Frutal Selva-Negra Lemon-Pie"
     "Frutos-rojos Arandano Buttercream";
 }
-
 .Selva-Negra { grid-area: Selva-Negra; }
-
 .Torta-Frutal { grid-area: Torta-Frutal; }
-
 .Lemon-Pie { grid-area: Lemon-Pie; }
-
 .Buttercream { grid-area: Buttercream; }
-
 .Arandano { grid-area: Arandano; }
-
 .Frutos-rojos { grid-area: Frutos-rojos; }
-
 .tortaButter{
     width: 175px;
     height: 235px;
 }
-
+/* Aca empieza el footer */
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 40px;
+    border-top: 2px solid black;
+}
+.footeer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border-top: 2px solid black;
+}
+/* ul{
+    color:darkblue
+}
+table{ border-color: black;
+    color: rgb(32, 24, 24);
+    }
+    tr {
+    color:rgb(32, 8, 36)
+    }
+ */
