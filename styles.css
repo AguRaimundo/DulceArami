@@ -186,20 +186,20 @@ p{
     
 }
 .transfor{
-    transform: translateX(40px) ;
+    transform: translateX(110px) ;
 }
 .key{
     animation: efecto;
     animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-delay: 1s;
-    animation-timing-function: cubic-bezier(.7,.68,0,.7)
+    animation-duration: 3s;
+    /* animation-delay: 2s; */
+    animation-timing-function: cubic-bezier(.72,.31,0,.92)
     
 }
 @keyframes efecto {
     0% {width: 115px ;}
-    50% {transform: translateX(300px)}
-    65% {transform: rotate(2deg)}
+    50% {transform: translateX(100px)}
+    /* 65% {transform: rotate(1deg)} */
     100% {width: 300px;}
 
 }
@@ -218,6 +218,9 @@ p{
     justify-content: space-evenly;
     width: 100%;
     border-top: 2px solid black;
+}
+.fontsize{
+    font-size: 100%;
 }
 /* ul{
     color:darkblue
