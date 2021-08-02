@@ -1,0 +1,52 @@
+.header{
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__alineacion {
+        display: flex;
+        justify-content: space-evenly;
+        width: 75%;
+
+        &__flexDiv{
+            display:flex;
+            flex-direction:column;
+            width: 20%;
+
+            &:hover .header__linea{
+                width: 100%;
+                border-bottom-color: red;
+                border-width: 3px;
+            }
+        }
+    }
+
+    &__linea{
+        border-bottom: red 3px solid;
+        width: 0%;
+        transition: width 1s;
+
+        &:hover{
+            width: 100%;
+            border-bottom-color: red;
+            border-width: 3px;
+        }
+    }
+
+    a {  
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover{
+            color:red;
+        }
+    }
+}
+
+
+
+

@@ -1,3 +1,5 @@
+@import "header";
+
 body{
     background-color: burlywood !important;
 }
@@ -7,18 +9,7 @@ body{
     font-weight: "bold";
     font-size: 20px
 }
-.navbar {
-    overflow: hidden;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar a {
-    font-size: 20px;
-    color: black;
-    text-align: center;
-}
+
 .carrusel{
     display: flex;
     justify-content: center !important
@@ -86,22 +77,7 @@ p{
     height: 50px;
     width: 50px;
 }
-.margenLink{
-    text-decoration: none;
-}
-.margenLink:hover{
-    color: red
-}
-.flexDiv{
-    display:flex;
-    flex-direction:column;
-    width: 20%;
-}
-.alineacion{
-    display: flex;
-    justify-content: space-evenly;
-    width: 75%;
-}
+
 .sectGrids{
     display: grid;
     grid-template-columns: 300px 300px 300px;
@@ -124,21 +100,7 @@ p{
     height: 300px;
 }
 }
-.linea {
-    border-bottom: red 3px solid;
-    width: 0%;
-    transition: width 1s;
-}
-.linea:hover {
-    width: 100%;
-    border-bottom-color: red;
-    border-width: 3px;
-}
-.flexDiv:hover .linea {
-    width: 100%;
-    border-bottom-color: red;
-    border-width: 3px;
-}
+
 .pedidosFlex{
     display: flex;
     justify-content: space-evenly
