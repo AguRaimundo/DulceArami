@@ -131,31 +131,6 @@ p {
   display: flex;
   justify-content: space-evenly; }
 
-/* Aca comienzan las animaciones/transformaciones */
-.trans {
-  transition: height 2s; }
-
-.trans:hover {
-  height: 250px; }
-
-.transfor {
-  transform: translateX(110px); }
-
-.key {
-  animation: efecto;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-timing-function: cubic-bezier(0.72, 0.31, 0, 0.92); }
-
-@keyframes efecto {
-  0% {
-    width: 115px; }
-  50% {
-    transform: translateX(100px); }
-  100% {
-    width: 300px; } }
-
 /* Aca empieza el footer */
 .footer {
   display: flex;
