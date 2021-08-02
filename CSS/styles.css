@@ -131,50 +131,6 @@ p {
   display: flex;
   justify-content: space-evenly; }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "Foto lista ." ". lista ." ". lista ."; }
-
-.Foto {
-  grid-area: Foto; }
-
-.lista {
-  grid-area: lista; }
-
-.container1 {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-template-rows: 2fr 2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "Torta-Frutal Selva-Negra Lemon-Pie" "Frutos-rojos Arandano Buttercream"; }
-
-.Selva-Negra {
-  grid-area: Selva-Negra; }
-
-.Torta-Frutal {
-  grid-area: Torta-Frutal; }
-
-.Lemon-Pie {
-  grid-area: Lemon-Pie; }
-
-.Buttercream {
-  grid-area: Buttercream; }
-
-.Arandano {
-  grid-area: Arandano; }
-
-.Frutos-rojos {
-  grid-area: Frutos-rojos; }
-
-.tortaButter {
-  width: 175px;
-  height: 235px; }
-
 /* Aca comienzan las animaciones/transformaciones */
 .trans {
   transition: height 2s; }
@@ -189,7 +145,7 @@ p {
   animation: efecto;
   animation-iteration-count: infinite;
   animation-duration: 3s;
-  /* animation-delay: 2s; */
+  animation-delay: 2s;
   animation-timing-function: cubic-bezier(0.72, 0.31, 0, 0.92); }
 
 @keyframes efecto {
@@ -197,7 +153,6 @@ p {
     width: 115px; }
   50% {
     transform: translateX(100px); }
-  /* 65% {transform: rotate(1deg)} */
   100% {
     width: 300px; } }
 
