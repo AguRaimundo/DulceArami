@@ -166,6 +166,7 @@ p {
 
 .footeer {
   bottom: 0;
+  position: fixed;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
