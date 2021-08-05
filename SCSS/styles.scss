@@ -1,7 +1,10 @@
 @import "header";
+$color-principal: burlywood;
+$ancho:600px;
+$alto:600px;
 
 body{
-    background-color: burlywood !important;
+    background-color: $color-principal !important;
 }
 .fuenteNueva{ 
     font-family: 'Source Sans Pro', sans-serif;
@@ -15,8 +18,8 @@ body{
     justify-content: center !important
 }
 .tamañoCarrusel{
-    width:300px;
-    height:300px;
+    width: $ancho/2;
+    height: $alto/2;
 
 }
 .position{
