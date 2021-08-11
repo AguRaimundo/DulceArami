@@ -80,8 +80,10 @@ p {
   font-size: 15px; }
 
 .indexFlex {
-  display: flex;
-  justify-content: space-evenly; }
+  display: flex; }
+
+.textIndex {
+  text-align: center; }
 
 .containers {
   display: flex;

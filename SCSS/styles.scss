@@ -55,7 +55,9 @@ p{
 }
 .indexFlex{
     display:flex;
-    justify-content: space-evenly;
+}
+.textIndex{
+    text-align: center;
 }
 .containers{
     display: flex;
