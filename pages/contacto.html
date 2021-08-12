@@ -36,21 +36,52 @@
     <main>
         <h3>Aca podes dejar tu mensaje o consulta</h3>
     <section>
-        <div class="containers">
-            <form class="formulario">
-                <input type="text" name="nombre" placeholder="Nombre">
-                <input type="text" name="apellido" placeholder= "Apellido">
-                <input type="email" name= "email" placeholder="Email">
-                <textarea name="comentarios" cols="40" rows="15"></textarea>
-            <div class="botones">
-                <input type="submit" value="enviar formulario">
-                <input type="reset" value="limpiar formulario">
-            </div>
+        <div class="container">
+            <form action="action_page.php">
+        
+            <label for="fname">Nombre</label>
+            <input type="text" id="fname" name="firstname" placeholder="Nombre..">
+        
+            <label for="lname">Apellido</label>
+            <input type="text" id="lname" name="lastname" placeholder="Apellido..">
+            
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email..">
+        
+            <label for="country">Provincia</label>
+            <select id="country" name="country">
+                <option value="australia">Entre Rios</option>
+                <option value="canada">Buenos Aires</option>
+                <option value="usa">Provincia de Buenos Aires</option>
+                <option value="usa">Cordoba</option>
+                <option value="usa">Santa Fe</option>
+                <option value="usa">Chaco</option>
+                <option value="usa">Tierra del Fuego</option>
+                <option value="usa">Misiones</option>
+                <option value="usa">Santa Cruz</option>
+                <option value="usa">Rio Negro</option>
+                <option value="usa">Mendoza</option>
+                <option value="usa">Chubut</option>
+                <option value="usa">Salta</option>
+                <option value="usa">Formosa</option>
+                <option value="usa">San Luis</option>
+                <option value="usa">San Juan</option>
+                <option value="usa">Jujuy</option>
+                <option value="usa">Santiago del Estero</option>
+                <option value="usa">La Rioja</option>
+                <option value="usa">Catamarca</option>
+            </select>
+        
+            <label for="subject">Consulta</label>
+            <textarea id="subject" name="subject" placeholder="Mensaje o Consulta.." style="height:200px"></textarea>
+        
+            <input type="submit" value="Enviar">
+        
             </form>
         </div>
     </section>
     </main>
-    <footer class="footeer">
+    <footer class="footer">
         <img src="../assets/facebook-brands.svg" class="iconos">
         <img src="../assets/instagram-square-brands.svg" class="iconos">
         <img src="../assets/twitter-square-brands.svg" class="iconos">
