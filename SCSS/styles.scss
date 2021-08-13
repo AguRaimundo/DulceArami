@@ -136,7 +136,7 @@ input[type=text], select, textarea {
 input[type=submit] {
     background-color: #04AA6D;
     color: white;
-    padding: 12px 20px;
+    padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -144,6 +144,19 @@ input[type=submit] {
 
   /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=reset] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=reset]:hover {
     background-color: #45a049;
 }
 
