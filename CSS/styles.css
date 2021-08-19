@@ -483,6 +483,51 @@ body {
     width: 40px;
     height: 40px; }
 
+.sumario {
+  display: flex;
+  margin: 30px; }
+  .sumario__orden {
+    background-color: white;
+    width: 375px;
+    height: 375px; }
+
+.formulario {
+  width: 60%; }
+  .formulario__vencimiento {
+    display: flex;
+    width: 100%;
+    height: 7%; }
+  .formulario__btn {
+    display: flex; }
+
+.carrusel {
+  display: flex;
+  justify-content: center !important; }
+
+.tamañoCarrusel {
+  width: 300px;
+  height: 300px; }
+
+.indexFlex {
+  display: flex; }
+  .indexFlex__textIndex {
+    text-align: center; }
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 40px;
+  border-top: 2px solid black; }
+
+.footeer {
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border-top: 2px solid black; }
+
 body {
   background: #f5f5f5 !important; }
 
@@ -494,14 +539,6 @@ body {
   font-style: "normal";
   font-weight: "bold";
   font-size: 20px; }
-
-.carrusel {
-  display: flex;
-  justify-content: center !important; }
-
-.tamañoCarrusel {
-  width: 300px;
-  height: 300px; }
 
 .position {
   position: none !important; }
@@ -528,12 +565,6 @@ p {
   border-bottom: 2px solid black;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px; }
-
-.indexFlex {
-  display: flex; }
-
-.textIndex {
-  text-align: center; }
 
 .containers {
   display: flex;
@@ -648,22 +679,6 @@ input[type=reset]:hover {
   .carroContainer__carro {
     width: 40px;
     height: 40px; }
-
-/* Aca empieza el footer */
-.footer {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 40px;
-  border-top: 2px solid black; }
-
-.footeer {
-  bottom: 0;
-  position: fixed;
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  border-top: 2px solid black; }
 
 .fontsize {
   font-size: 100%; }

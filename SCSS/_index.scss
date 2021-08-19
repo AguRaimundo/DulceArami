@@ -1,0 +1,16 @@
+.carrusel{
+    display: flex;
+    justify-content: center !important
+}
+.tamañoCarrusel{
+    width: 300px;
+    height: 300px;
+
+}
+.indexFlex{
+    display:flex;
+
+    &__textIndex{
+        text-align: center;
+    }
+}

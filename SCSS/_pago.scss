@@ -1,0 +1,23 @@
+.sumario{
+    display: flex; 
+    margin: 30px;
+
+    &__orden{
+        background-color: white;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+.formulario{
+    width: 60%;
+    
+    &__vencimiento{
+        display: flex;
+        width: 100%;
+        height: 7%;
+    }
+    &__btn{
+        display: flex;
+    }
+}
