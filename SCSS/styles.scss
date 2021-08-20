@@ -4,11 +4,12 @@
 @import "pago";
 @import "index";
 @import "footer";
+@import "contacto";
 body{
     background: #f5f5f5 !important;
     
 }
-.mainsect{
+/* .mainsect{
     display: flex;
 
 }
@@ -20,9 +21,9 @@ body{
 }
 
 .position{
-    position:none !important;
+    position:none !important; 
 
-}
+} */
 h1 {
     display: flex;
     justify-content: center;
@@ -37,10 +38,10 @@ h3{
     justify-content: center;
     color: red;
     }
-p{
+/* p{
     font-family: 'Source Sans Pro', sans-serif;
     color: black;
-}
+} */
 .borderSection{
     border-bottom: 2px solid black;
     font-family: 'Source Sans Pro', sans-serif;
@@ -63,12 +64,7 @@ p{
     justify-content: space-evenly;
     margin-bottom: 25px;
 }
-.tamañoImagen{
-    width: 175px;
-}
-.tamañoPersonalizado{
-    width: 150px;
-}
+
 .fuenteNueva{ 
     font-family: 'Source Sans Pro', sans-serif;
     font-style: "normal";
@@ -90,37 +86,12 @@ p{
     width: 175px;
     height: 175px;
 }
-@media screen and (max-width: 600px) {
-.imagenesWeb{
-    width: 175px;
-    height: 175px;
-}
-}
-@media screen and (max-width: 900px) and (min-width:600px){
-.imagenesWeb{
-    width:300px;
-    height: 300px;
-}
-}
 
-.pedidosFlex{
-    display: flex;
-    justify-content: space-evenly
-}
-/* Formulario de Contacto */
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px; 
-    margin-bottom: 16px; 
-    resize: vertical 
-}
+
+
 
   /* Style the submit button with a specific background color etc */
-input[type=submit] {
+/* input[type=submit] {
     background-color: #04AA6D;
     color: white;
     padding: 10px 15px;
@@ -129,7 +100,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-  /* When moving the mouse over the submit button, add a darker green color */
+  /* When moving the mouse over the submit button, add a darker green color 
 input[type=submit]:hover {
     background-color: #45a049;
 }
@@ -145,33 +116,6 @@ input[type=reset] {
 
 input[type=reset]:hover {
     background-color: #45a049;
-}
+} */
 
   /* Add a background color and some padding around the form */
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-.carroContainer{
-        background: burlywood;
-        position: fixed;
-        bottom: 70px;
-        right: 40px;
-        width: 75px;
-        height: 75px;
-        border-radius: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-
-    &__carro{
-        width: 40px;
-        height: 40px;
-    }
-}
-
-.fontsize{
-    font-size: 100%;
-}
