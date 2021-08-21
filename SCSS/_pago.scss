@@ -6,7 +6,11 @@
         background-color: white;
         width: 375px;
         height: 375px;
+        @media screen and (max-width:600px) {
+            margin-right: 10px;
+        }
     }
+
 }
 
 .formulario{
@@ -19,5 +23,7 @@
     }
     &__btn{
         display: flex;
+        justify-content: center;
     }
 }
+

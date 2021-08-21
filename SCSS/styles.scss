@@ -5,117 +5,13 @@
 @import "index";
 @import "footer";
 @import "contacto";
+
 body{
     background: #f5f5f5 !important;
     
 }
-/* .mainsect{
-    display: flex;
-
-}
-.fuenteNueva{ 
-    font-family: 'Source Sans Pro', sans-serif;
-    font-style: "normal";
-    font-weight: "bold";
-    font-size: 20px
-}
-
-.position{
-    position:none !important; 
-
-} */
-h1 {
-    display: flex;
-    justify-content: center;
-    color: rgb(8, 12, 8);
-}
-h2{
-    display: flex;
-    justify-content: center;
-}
-h3{
-    display: flex;
-    justify-content: center;
-    color: red;
-    }
-/* p{
-    font-family: 'Source Sans Pro', sans-serif;
-    color: black;
-} */
-.borderSection{
-    border-bottom: 2px solid black;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 15px;
-}
-.containers{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
-.formulario{
-    display:flex;
-    flex-direction: column;
-}
-.botones{
-    display:flex;
-}
-.flexTortas{
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 25px;
-}
-
-.fuenteNueva{ 
-    font-family: 'Source Sans Pro', sans-serif;
-    font-style: "normal";
-    font-weight: "bold";
-    font-size: 20px
-}
-.iconos{
-    height: 50px;
-    width: 50px;
-}
-
-.sectGrids{
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 30px 30px 30px 30px;
-    justify-content: space-between;
-}
-.imagenesWeb{
-    width: 175px;
-    height: 175px;
-}
 
 
 
 
-  /* Style the submit button with a specific background color etc */
-/* input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
-  /* When moving the mouse over the submit button, add a darker green color 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-input[type=reset] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=reset]:hover {
-    background-color: #45a049;
-} */
-
-  /* Add a background color and some padding around the form */
