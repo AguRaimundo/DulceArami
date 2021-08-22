@@ -184,35 +184,43 @@ p {
     height: 40px; }
 
 .sumario {
-  display: flex;
-  margin: 30px; }
+  display: flex; }
+  @media screen and (max-width: 600px) {
+    .sumario {
+      flex-direction: column; } }
   .sumario__orden {
     background-color: white;
     width: 375px;
-    height: 375px; }
+    height: 375px;
+    margin: 22px; }
     @media screen and (max-width: 600px) {
       .sumario__orden {
         margin-right: 10px; } }
 
 .formulario {
-  width: 60%; }
+  width: 60%;
+  margin: 15px; }
   .formulario__vencimiento {
     display: flex;
     width: 100%;
     height: 7%; }
-  .formulario__btn {
-    display: flex;
-    justify-content: center; }
+
+.btnPago {
+  display: flex;
+  justify-content: center;
+  margin: 10px; }
 
 .contenedor {
   display: flex; }
   .contenedor__tamanioAcordeon {
-    width: 50%; }
+    width: 50%;
+    padding: 15px; }
     @media screen and (max-width: 600px) {
       .contenedor__tamanioAcordeon {
         width: 100%; } }
   .contenedor__tamanioCarrusel {
-    width: 50%; }
+    width: 50%;
+    padding: 15px; }
     .contenedor__tamanioCarrusel__imgCarrusel {
       width: 100%; }
     @media screen and (max-width: 600px) {
@@ -259,11 +267,6 @@ p {
     .sectIndex {
       flex-direction: column; } }
 
-.indexFlex {
-  display: flex; }
-  .indexFlex__textIndex {
-    text-align: center; }
-
 .borderCont {
   display: flex;
   justify-content: center;
@@ -273,6 +276,30 @@ p {
     width: 35%;
     border-radius: 10px; }
 
+.cartaIndex {
+  display: flex;
+  justify-content: center; }
+  .cartaIndex__envio {
+    background-color: white;
+    width: 250px;
+    margin: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .cartaIndex__btnCompras {
+    background-color: #04AA6D;
+    font-size: 20px;
+    width: 40%;
+    margin: 20px;
+    border-radius: 10px; }
+    .cartaIndex__btnCompras:hover {
+      background-color: #0a490d; }
+  .cartaIndex__aRef {
+    color: #080c08 !important;
+    text-decoration: none; }
+  .cartaIndex__hacerPedido {
+    margin: 20px; }
+
 h2 {
   text-align: center; }
 
@@ -281,7 +308,7 @@ h2 {
   justify-content: space-evenly;
   width: 100%;
   height: 40px;
-  border-top: 2px solid black; }
+  border-top: 3px solid black; }
 
 .footeer {
   bottom: 0;
@@ -289,7 +316,7 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  border-top: 2px solid black; }
+  border-top: 3px solid black; }
 
 .iconos {
   height: 50px;

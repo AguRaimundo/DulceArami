@@ -1,13 +1,19 @@
 .sumario{
     display: flex; 
-    margin: 30px;
+
+    @media screen and (max-width:600px){
+        flex-direction: column;
+
+    }
 
     &__orden{
         background-color: white;
         width: 375px;
         height: 375px;
+        margin: 22px;
         @media screen and (max-width:600px) {
             margin-right: 10px;
+            
         }
     }
 
@@ -15,15 +21,16 @@
 
 .formulario{
     width: 60%;
-    
+    margin: 15px;
     &__vencimiento{
         display: flex;
         width: 100%;
         height: 7%;
     }
-    &__btn{
-        display: flex;
-        justify-content: center;
-    }
+    
 }
-
+.btnPago{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}

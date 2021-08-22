@@ -4,6 +4,8 @@
 
     &__tamanioAcordeon{
         width: 50%;
+        padding: 15px;
+
         @media screen and (max-width:600px) {
             width: 100%;
         }
@@ -11,7 +13,7 @@
 
     &__tamanioCarrusel{
         width: 50%;
-        
+        padding: 15px;
         
         &__imgCarrusel{
             width: 100%;
@@ -69,14 +71,6 @@
         flex-direction: column;
     }
 }
-
-.indexFlex{
-    display:flex;
-
-    &__textIndex{
-        text-align: center;
-    }
-}
 .borderCont{
     display: flex;
     justify-content: center;
@@ -87,6 +81,38 @@
     width: 35%;
     border-radius: 10px;
 }
+}
+.cartaIndex{
+    display: flex;
+    justify-content: center;
+
+    &__envio{
+        background-color: white;
+        width: 250px;
+        margin: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    &__btnCompras{
+        background-color: #04AA6D;
+        font-size: 20px;
+        width: 40%;
+        margin:20px;
+        border-radius: 10px;
+        &:hover{
+            background-color: #0a490d;
+        }
+            }
+        &__aRef{
+            color:rgb(8, 12, 8) !important;
+            text-decoration: none;
+            
+            }
+        &__hacerPedido{
+            margin: 20px;
+        }
 }
 
 h2{
