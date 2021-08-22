@@ -191,7 +191,10 @@ p {
   display: flex; }
   @media screen and (max-width: 600px) {
     .sumario {
-      flex-direction: column; } }
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 10px; } }
   .sumario__orden {
     background-color: white;
     width: 375px;
@@ -199,7 +202,8 @@ p {
     margin: 22px; }
     @media screen and (max-width: 600px) {
       .sumario__orden {
-        margin-right: 10px; } }
+        width: 220px;
+        height: 200px; } }
 
 .formulario {
   width: 60%;
@@ -208,6 +212,9 @@ p {
     display: flex;
     width: 100%;
     height: 7%; }
+  @media screen and (max-width: 600px) {
+    .formulario {
+      width: 80%; } }
 
 .btnPago {
   display: flex;
