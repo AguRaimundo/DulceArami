@@ -103,6 +103,10 @@
 .card:hover .card-body .card-title {
   margin-bottom: .75rem; }
 
+@media screen and (max-width: 600px) {
+  .cardtextMobile {
+    font-size: 18px; } }
+
 .card-body {
   position: absolute;
   bottom: 0;
@@ -122,6 +126,9 @@
 
 .card:hover .card-body {
   height: 80%; }
+  @media screen and (max-width: 600px) {
+    .card:hover .card-body {
+      height: 100%; } }
 
 .card:hover .card-content {
   bottom: 0; }
@@ -285,6 +292,11 @@ p {
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 3px 20px darkgrey; }
+    @media screen and (max-width: 600px) {
+      .cartaIndex__envio {
+        flex-direction: column;
+        height: 320px;
+        padding-top: 15px; } }
   .cartaIndex__btnCompras {
     background-color: #04AA6D;
     width: 30%;
@@ -297,6 +309,9 @@ p {
     margin: 10px; }
     .cartaIndex__btnCompras:hover {
       background-color: #0a490d; }
+    @media screen and (max-width: 600px) {
+      .cartaIndex__btnCompras {
+        width: 90%; } }
   .cartaIndex__aRef {
     color: white !important;
     text-decoration: none; }

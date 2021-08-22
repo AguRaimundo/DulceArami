@@ -66,6 +66,12 @@
     margin-bottom: .75rem;
 }
 
+.cardtextMobile{
+    @media screen and (max-width:600px) {
+        font-size: 18px;
+    }
+}
+
 .card-body {
     position: absolute;
     bottom: 0;
@@ -85,6 +91,10 @@
 }
 .card:hover .card-body {
     height: 80%;
+
+    @media screen and (max-width:600px) {
+        height: 100%;
+    }
 }
 .card:hover .card-content {
     bottom: 0;
