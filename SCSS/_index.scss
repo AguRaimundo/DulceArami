@@ -88,30 +88,41 @@
 
     &__envio{
         background-color: white;
-        width: 250px;
+        width: 80%;
+        height: 200px;
         margin: 22px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: 2px 3px 20px darkgrey;
         
     }
     &__btnCompras{
         background-color: #04AA6D;
-        font-size: 20px;
-        width: 40%;
-        margin:20px;
+        width: 30%;
+        height: 40px;
         border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin: 10px;
         &:hover{
             background-color: #0a490d;
         }
             }
         &__aRef{
-            color:rgb(8, 12, 8) !important;
+            color:white!important;
             text-decoration: none;
             
             }
         &__hacerPedido{
             margin: 20px;
+        }
+        &__fuenteCarta{
+            text-align: center;
+            padding: 10px;
+            font-weight: 600;
         }
 }
 
