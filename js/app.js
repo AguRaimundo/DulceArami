@@ -12,6 +12,6 @@ let numero1 = 5
 let numero2 = 40
 
 
-console.log("ggwp entraste");
+console.log('Bienvenido  Agustin  Raimundo' + ' tu edad es' + ' 23');
 console.log(numero1 + numero2);
 
