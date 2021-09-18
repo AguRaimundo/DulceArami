@@ -12,6 +12,6 @@ let numero1 = 5
 let numero2 = 40
 
 
-console.log('Bienvenido  Agustin  Raimundo' + ' tu edad es' + ' 23');
+console.log('Bienvenido ' + nombre + ' ' + apellido + ' tu edad es ' + edad);
 console.log(numero1 + numero2);
 
