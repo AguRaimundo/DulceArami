@@ -1,17 +1,26 @@
+alert("Bienvenido al programa 1")
+let nombre = prompt ("ingrese su nombre");
+let apellido = prompt ("ingrese su apellido");
+let edad = Number(prompt ("ingrese su edad"));
+let sexo = prompt("ingrese sexo");
+let palabra ; 
 
-let nombre = "Agustin";
-let apellido = "Raimundo";
-let edad = "23";
+let dinero =Number(prompt("Ingrese su Dinero"));
 
-let mensaje = prompt ("ingrese su nombre");
-let mensaje2 = prompt ("ingrese su apellido");
-let mensaje3 = Number(prompt ("ingrese su edad"));
-
-let numero = 10
-let numero1 = 5
+if (dinero === 15){
+    alert("Felicidades, con 15 pe te haces alto guiso");
+}else if (dinero != 15){
+    alert("Que lastima, con 15 pe te hacias alto guiso");
+}
 let numero2 = 40
 
+if (sexo === "M") {
+    palabra = "Bienvenido";
+}else if (sexo === "F"){
+    palabra = "Bienvenida";
+}else {
+    palabra = "Bienvenide";
+}
 
-console.log('Bienvenido ' + nombre + ' ' + apellido + ' tu edad es ' + edad);
-console.log(numero1 + numero2);
 
+console.log(`${palabra} ${nombre} ${apellido} tu edad es ${edad}`);
