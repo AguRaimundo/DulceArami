@@ -1,7 +1,8 @@
 alert("Bienvenido al programa 1")
 let nombre = prompt ("ingrese su nombre");
 let apellido = prompt ("ingrese su apellido");
-let edad = Number(prompt ("ingrese su edad"));
+let edad = 23
+let dato = Number(prompt("Ingrese su edad"));
 let sexo = prompt("ingrese sexo");
 let palabra ; 
 
@@ -9,10 +10,15 @@ let dinero =Number(prompt("Ingrese su Dinero"));
 
 if (dinero === 15){
     alert("Felicidades, con 15 pe te haces alto guiso");
-}else if (dinero != 15){
+}
+
+while (" dato != edad "){
+    alert("Contrasenia Incorrecta");
+}
+/* else if (dinero != 15){
     alert("Que lastima, con 15 pe te hacias alto guiso");
 }
-let numero2 = 40
+let numero2 = 40 */
 
 if (sexo === "M") {
     palabra = "Bienvenido";
