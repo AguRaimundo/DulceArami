@@ -4,21 +4,17 @@ let apellido = prompt ("ingrese su apellido");
 let edad = 23
 let dato = Number(prompt("Ingrese su edad"));
 let sexo = prompt("ingrese sexo");
-let palabra ; 
-
 let dinero =Number(prompt("Ingrese su Dinero"));
 
-if (dinero === 15){
+do {('dinero === 15')
     alert("Felicidades, con 15 pe te haces alto guiso");
 }
+    
+while (dinero != 15); 
+    alert("Que lastima, con 15 pe te haces alto guiso");
+    dinero =Number(prompt("Ingrese su Dinero"));
 
-while (" dato != edad "){
-    alert("Contrasenia Incorrecta");
-}
-/* else if (dinero != 15){
-    alert("Que lastima, con 15 pe te hacias alto guiso");
-}
-let numero2 = 40 */
+
 
 if (sexo === "M") {
     palabra = "Bienvenido";
