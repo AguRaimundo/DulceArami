@@ -11,7 +11,40 @@ while (dato != pass && pruebas > 0){
 if(dato === pass){
     console.log( `Bienvenido`);
 } */
-const iva = 21
+
+class dulceArami{
+    constructor(torta1, torta2, torta3, stock, disponible) {
+        this.torta1 = torta1,
+        this.torta2 = torta2
+        this.torta3 = torta3
+        this.stock = stock
+        this.disponible = disponible
+        
+    }
+
+comprar(cantidad){
+    if(this.stock <= 0){
+        console.log("No hay stock disponible");
+    }
+        else{
+            this.stock = this.stock - cantidad
+            console.log(`Compraste una torta`);
+        }
+    
+    }
+}
+const fabrica = new dulceArami ("Torta Mousse", "Lemon Pie", "Selva Negra", )
+
+
+
+
+
+
+
+
+
+
+/* const iva = 21
 const tortaDulcedeLeche = 2000;
 const tortaChocolate = 1850;
 const tortaMousse = 1256;
@@ -39,7 +72,7 @@ const procesoIva = () =>{
     return tortaElegida + compraIva(tortaElegida);
 };
 console.log(procesoIva());
-
+ */
 
 /* const compra = () => {
     let total = 0;
