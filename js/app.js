@@ -1,23 +1,58 @@
-/* 
-const pass = 1998
-let dato = Number(prompt("Ingrese su Contrasenia"));
-let pruebas = 3
 
-while (dato != pass && pruebas > 0){
-    alert(`Contrasenia Incorrecta, te quedan ${pruebas} intentos`);
-    pruebas--;
-    dato = Number(prompt("Ingrese su Contrasenia"));
-}
-if(dato === pass){
-    console.log( `Bienvenido`);
-} */
+class Tortas{
+    constructor(nombre, ingredientes, precio, stock){
+    this.nombre = nombre,
+    this.ingredientes = ingredientes,
+    this.precio = precio,
+    this.stock = stock
+    }
 
-class dulceArami{
+    getNombre = () => {return this.nombre}
+    getIngredientes = () => {return this.ingredientes}
+    getPrecio = () => {return this.precio}
+    isAvailable = () => {return this.stock > 0 ? true : false}
+
+};
+
+const tortaCookie = new Tortas("Torta Cookie",["Nueces", "Chocolate", "Dulce de Leche", "Crema Chantilly"],2500, 5);
+const tortaLemonPie = new Tortas("Lemon Pie",["limon", "Masa Sablee", "Merengue"], 1800, 0 );
+const tortaRogel = new Tortas("Torta Rogel", ["Masa Neutra", "Dulce de Leche", "Merengue"],2000,2 );
+
+const defineTorta = (torta) => {
+    switch (torta){
+        case "cookie": 
+                return tortaCookie;
+        case "rogel":
+                return tortaRogel;
+        case "lemonpie":
+                return tortaLemonPie; 
+    }
+};
+
+comprar = () => {
+    let cake = prompt("Ingrese su Torta")
+    const tortas = defineTorta(cake);
+    if(tortas.isAvailable()){
+        tortas.stock = tortas.stock - 1;
+        console.log("Compraste una Torta");
+        console.log("Veo la torta despues de comprar",tortas);
+    }
+    else{
+        console.log("No hay stock disponible");
+    }
+};
+
+comprar();
+
+
+
+
+/* class DulceArami{
     constructor(torta1, torta2, torta3, stock, disponible) {
         this.torta1 = torta1,
-        this.torta2 = torta2
-        this.torta3 = torta3
-        this.stock = stock
+        this.torta2 = torta2,
+        this.torta3 = torta3,
+        this.stock = stock,
         this.disponible = disponible
         
     }
@@ -30,11 +65,10 @@ comprar(cantidad){
             this.stock = this.stock - cantidad
             console.log(`Compraste una torta`);
         }
-    
     }
 }
 const fabrica = new dulceArami ("Torta Mousse", "Lemon Pie", "Selva Negra", )
-
+ */
 
 
 
