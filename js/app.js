@@ -76,6 +76,18 @@ const getTortaIndice = (listadoTortas,torta) => {
     return listadoTortas.findIndex(cake => cake.id === torta.id);
 }
 
+//Sumar elemento al carrito mediante evento click en btn (ej 9 y preentrega)
+//input para ingresar cant de comprar (preentrega) 
+
+
+
+
+
+
+
+
+
+
 
 
 const simulaCarrito = () => {
