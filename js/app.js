@@ -113,7 +113,7 @@ const simulaCarrito = () => {
         }
     }
 }
-simulaCarrito();      
+simulaCarrito();
 
 
 
