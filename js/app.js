@@ -78,6 +78,12 @@ const getTortaIndice = (listadoTortas,torta) => {
 
 //Sumar elemento al carrito mediante evento click en btn (ej 9 y preentrega)
 //input para ingresar cant de comprar (preentrega) 
+//agregar el resto de tortas
+
+
+let boton = document.getElementById("sumaCarro");
+//hacer funcion sumaCarro para 1 torta
+const sumaCarro = () =>{console.log("gorda tonta")}
 
 
 
@@ -85,47 +91,6 @@ const getTortaIndice = (listadoTortas,torta) => {
 
 
 
-
-
-
-
-
-const simulaCarrito = () => {
-    while(true){
-        let decision = prompt("Que desea hacer?");
-        let tortaElegida;
-        switch (decision){
-            case "agregar":
-        let cake = prompt("Ingrese su Producto");
-        tortaElegida = defineTorta(cake);
-        if(tortaElegida.isAvailable()){
-            carro.agregarProducto(tortaElegida);
-            tortaElegida.stock--;
-            console.log("Veo el carro despues de comprar", carro.productos, carro.total);
-        }
-        else{
-            alert("No hay stock disponible");
-        };
-                break;
-            case "retirar":
-                let tortaRetirada = prompt("Ingrese su torta a retirar");
-                tortaElegida = defineTorta(tortaRetirada);
-                if (chequeoTorta(carro.productos,tortaElegida)){
-                carro.quitarProducto(tortaElegida);
-                console.log("Veo el carro despues de quitar", carro.productos, carro.total);
-                tortaElegida.stock++;
-                }
-                    else{
-                        alert("Esta torta no fue elegida");
-                        }
-                break;
-            case "fin":
-                console.log("Estado final del carro", carro)
-                return;
-        }
-    }
-}
-simulaCarrito();
 
 
 
