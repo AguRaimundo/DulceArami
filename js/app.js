@@ -16,17 +16,14 @@ class Tortas{
     getIngredientes = () => {return this.ingredientes}
     getPrecio = () => {return this.precio}
     isAvailable = () => {return this.stock > 0 ? true : false}
-
-};
-
-
-const tortaCookie = new Tortas("Torta Cookie",["Nueces", "Chocolate", "Dulce de Leche", "Crema Chantilly"],2500, 5,1);
-const tortaLemonPie = new Tortas("Lemon Pie",["limon", "Masa Sablee", "Merengue"], 1800, 0,2);
-const tortaRogel = new Tortas("Torta Rogel", ["Masa Neutra", "Dulce de Leche", "Merengue"],2000,2,3);
-
-
-
-let baseDatoTorta = [tortaCookie,tortaLemonPie,tortaRogel];
+    };
+const tortaBrownie = new Tortas("Torta Brownie",["Manteca", "Huevos", "Frutos Rojos", "Crema Chantilly"],2500,2,1);
+const tortaMousse = new Tortas("Mousse de Frutilla",["Crema de Limon", "Huevos", "Esencia de Vainilla"],2300,6,2);
+const tortaFrutosRojos = new Tortas ("Cheescake de Frutos Rojos",["Queso crema","Huevos","Manteca Fundida"],2200,4,3);
+const tortaCookie = new Tortas("Torta Cookie",["Nueces", "Chocolate", "Dulce de Leche", "Crema Chantilly"],2500, 5,4);
+const tortaRogel = new Tortas("Torta Rogel", ["Masa Neutra", "Dulce de Leche", "Merengue"],2000,2,5);
+const tortaLemonPie = new Tortas("Lemon Pie",["limon", "Masa Sablee", "Merengue"], 1800, 0,6);
+let baseDatoTorta = [tortaBrownie,tortaMousse,tortaFrutosRojos,tortaCookie,tortaLemonPie,tortaRogel];
 
 class Carrito{
     constructor(productos,total){
@@ -53,10 +50,51 @@ class Carrito{
         }
     };
 
+let carro;
+let queHaySt = localStorage.getItem("carrito");
 
-let carro = new Carrito([],0);
+if(queHaySt){
+    let prueba = JSON.parse(queHaySt);
+    carro = new Carrito(prueba.productos,prueba.total);
 
-const defineTorta = (torta) => {
+}else{
+    carro = new Carrito([],0);
+}
+
+//Sumar elemento al carrito mediante evento click en btn (ej 9 y preentrega)                
+//input para ingresar cant de comprar (preentrega)   
+//agregar el resto de tortas 
+
+
+let boton = document.getElementById("sumaCarro");
+//hacer funcion sumaCarro para 1 torta
+//esta funcion agrega por cada click 1 torta mousse al carrito
+const sumaCarro = () =>{
+    
+    if(tortaBrownie.isAvailable()){
+        tortaBrownie.stock--;
+        carro.productos.push(tortaBrownie);
+        carro.total += tortaBrownie.getPrecio();
+        localStorage.setItem("carrito",JSON.stringify(carro));
+    }else{
+        alert("No hay stock");
+    }
+}
+console.log("veo el carro", carro);
+
+
+
+
+/* const chequeoTorta = (listadoTortas,torta) =>{
+    let resultado = listadoTortas.find(cake => cake.id === torta.id);
+    return resultado == undefined ? false : true;
+} 
+
+const getTortaIndice = (listadoTortas,torta) => {
+    return listadoTortas.findIndex(cake => cake.id === torta.id);
+} */
+
+/* const defineTorta = (torta) => {
     switch (torta){
         case "cookie": 
                 return tortaCookie;
@@ -64,34 +102,11 @@ const defineTorta = (torta) => {
                 return tortaRogel;
         case "lemonpie":
                 return tortaLemonPie;
+        case "Mousse":
+                return tortaMousse;
+        case "brownie":
+                return tortaBrownie;
+        case "frutosrojos":
+                return tortaFrutosRojos;
     }
-};
-
-const chequeoTorta = (listadoTortas,torta) =>{
-    let resultado = listadoTortas.find(cake => cake.id === torta.id);
-    return resultado == undefined ? false : true;
-} 
-
-const getTortaIndice = (listadoTortas,torta) => {
-    return listadoTortas.findIndex(cake => cake.id === torta.id);
-}
-
-//Sumar elemento al carrito mediante evento click en btn (ej 9 y preentrega)
-//input para ingresar cant de comprar (preentrega) 
-//agregar el resto de tortas
-
-
-let boton = document.getElementById("sumaCarro");
-//hacer funcion sumaCarro para 1 torta
-const sumaCarro = () =>{console.log("gorda tonta")}
-
-
-
-
-
-
-
-
-
-
-
+}; */
