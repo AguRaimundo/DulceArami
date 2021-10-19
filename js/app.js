@@ -1,3 +1,9 @@
+//funcion para cantidad de tortas 
+//1) cada torta tiene su input para obtener la cantidad (llamar input de cada torta)
+//2)comparar stock con valor de dicho input (agregando)/quitando deben estar agregadas las tortas
+//3)Agregar/quitar la cantidad pedida
+//4)Mandar update al storage
+
 
 
 class Tortas{
@@ -50,12 +56,20 @@ class Carrito{
         }
         getTotal = () => {return this.total}
 
-        agregarProducto = (torta) => {
-            this.productos.push(torta),
-            this.total = this.total + torta.getPrecio()
+            agregarProducto = (torta) =>{
+            console.log(torta)
+            if(torta.isAvailable()){
+                torta.stock--;
+                console.log("veo el producto", this.productos)
+                this.productos.push(torta);
+                this.total += torta.getPrecio();
+                localStorage.setItem("carrito",JSON.stringify(this.productos));
+            }else{
+                alert("No hay stock");
+            }
         }
-
         quitarProducto = (torta) => {
+            console.log(torta)
             let contentAux= [];
             let index = getTortaIndice(this.productos,torta);
             for(let k=0; k<this.productos.length; k++) {
@@ -63,22 +77,35 @@ class Carrito{
                 contentAux.push(this.productos[k]);
                 } 
             }
+            torta.stock++;
             this.productos = contentAux;
             this.total = this.total - torta.getPrecio()
+            localStorage.setItem("carrito",JSON.stringify(this.productos));
+            
         }
     };
+//getTortaIndice devuelve la posicion de la torta en el listado
+    const getTortaIndice = (productos,torta) =>{
+        return productos.findIndex((elemento) => torta.id === elemento.id)
+    }
 
+
+    
 let carro;
 let queHaySt = localStorage.getItem("carrito");
 
 if(queHaySt){
+    let total = 0;
     let prueba = JSON.parse(queHaySt);
-    carro = new Carrito(prueba.productos,prueba.total);
-
+    console.log("veola prueba",prueba)
+    for(let t = 0; t<prueba.length; t++){
+        total+=prueba[t].precio
+    }
+    carro = new Carrito(prueba,total);
 }else{
     carro = new Carrito([],0);
 }
-
+console.log("veo el carro",carro)
 
 let printHtml = ``
 let lista = document.getElementById("ulDefinitivo")
@@ -92,26 +119,18 @@ for(let i = 0; i < baseDatoTorta.length; i++){
                                 <div class="d-flex align-items-center justify-content-between mt-1">
                                     <h6 class="font-weight-bold my-2">${baseDatoTorta[i].precio}</h6>
                                 </div>
-                    </div><img src="${baseDatoTorta[i].img}" alt="Torta Brownie" width="200" class="ml-lg-5 order-1 order-lg-2">
-                </div>
+                    </div>
+                    <img src="${baseDatoTorta[i].img}" alt="Torta Brownie" width="200" class="ml-lg-5 order-1 order-lg-2">
+                    </div>
                             <div class="btCompra">
-                                <input type="submit" value="Comprar" onclick="sumaCarro(baseDatoTorta[${i}])">
+                                <input type="submit" value="Comprar" onclick="carro.agregarProducto(baseDatoTorta[${i}])">
+                                <button type="button" class="btn btn-danger" onclick="carro.quitarProducto(baseDatoTorta[${i}])">Quitar</button>
                             </div>
+                            <div><input type="number" value="0"></div>
             </li>`
 }
 lista.innerHTML = printHtml;
 
 
-const sumaCarro = (torta) =>{
-    console.log(torta)
-    if(torta.isAvailable()){
-        torta.stock--;
-        carro.productos.push(torta);
-        carro.total += torta.getPrecio();
-        localStorage.setItem("carrito",JSON.stringify(carro));
-    }else{
-        alert("No hay stock");
-    }
-}
-console.log("veo el carro", carro);
+
 
