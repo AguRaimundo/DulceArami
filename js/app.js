@@ -1,10 +1,4 @@
-//funcion para cantidad de tortas 
-//1) cada torta tiene su input para obtener la cantidad (llamar input de cada torta)
-//2)comparar stock con valor de dicho input (agregando)/quitando deben estar agregadas las tortas
-//3)Agregar/quitar la cantidad pedida
-//4)Mandar update al storage
-
-
+//Funcion para quitar de a mas de 1 torta
 
 class Tortas{
     constructor(nombre, descripcion, img, ingredientes, precio, stock, id){
@@ -16,7 +10,7 @@ class Tortas{
     this.stock = stock,
     this.id = id
     }
-
+    getStock = () => {return this.stock}
     getNombre = () => {return this.nombre}
     getIngredientes = () => {return this.ingredientes}
     getPrecio = () => {return this.precio}
@@ -48,7 +42,6 @@ const tortaLemonPie = new Tortas("Lemon Pie",
 
 let baseDatoTorta = [tortaBrownie,tortaMousse,tortaFrutosRojos,tortaCookie,tortaLemonPie,tortaRogel];
 
-
 class Carrito{
     constructor(productos,total){
         this.productos = productos
@@ -57,15 +50,27 @@ class Carrito{
         getTotal = () => {return this.total}
 
             agregarProducto = (torta) =>{
-            console.log(torta)
-            if(torta.isAvailable()){
-                torta.stock--;
+            let inputCant = document.getElementById(`input${torta.id}`).value
+            console.log("gordatonta",inputCant)
+            if(torta.isAvailable() && torta.getStock()>=inputCant && inputCant > 0){
+                torta.stock -= inputCant;
                 console.log("veo el producto", this.productos)
-                this.productos.push(torta);
-                this.total += torta.getPrecio();
+                for(let j=0; j<inputCant; j++){
+                    this.productos.push(torta);
+                }
+                this.total += torta.getPrecio() * inputCant;
+                console.log("a ver",carro)
                 localStorage.setItem("carrito",JSON.stringify(this.productos));
             }else{
-                alert("No hay stock");
+                if(!torta.isAvailable()){
+                    alert("No hay Stock Disponible")
+                }
+                if(torta.getStock()<inputCant){
+                    alert("No hay Suficiente Stock Disponible")
+                }
+                if(inputCant<=0){
+                    alert("Error")
+                }
             }
         }
         quitarProducto = (torta) => {
@@ -84,13 +89,11 @@ class Carrito{
             
         }
     };
-//getTortaIndice devuelve la posicion de la torta en el listado
+    //getTortaIndice devuelve la posicion de la torta en el listado
     const getTortaIndice = (productos,torta) =>{
         return productos.findIndex((elemento) => torta.id === elemento.id)
     }
 
-
-    
 let carro;
 let queHaySt = localStorage.getItem("carrito");
 
@@ -126,7 +129,7 @@ for(let i = 0; i < baseDatoTorta.length; i++){
                                 <input type="submit" value="Comprar" onclick="carro.agregarProducto(baseDatoTorta[${i}])">
                                 <button type="button" class="btn btn-danger" onclick="carro.quitarProducto(baseDatoTorta[${i}])">Quitar</button>
                             </div>
-                            <div><input type="number" value="0"></div>
+                            <div><input type="number" value="0" id="input${baseDatoTorta[i].id}"></div>
             </li>`
 }
 lista.innerHTML = printHtml;
