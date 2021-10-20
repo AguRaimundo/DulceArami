@@ -1,4 +1,3 @@
-//Funcion para quitar de a mas de 1 torta
 
 class Tortas{
     constructor(nombre, descripcion, img, ingredientes, precio, stock, id){
