@@ -95,11 +95,23 @@ for(let i = 0; i < baseDatoTorta.length; i++){
                     </div><img src="${baseDatoTorta[i].img}" alt="Torta Brownie" width="200" class="ml-lg-5 order-1 order-lg-2">
                 </div>
                             <div class="btCompra">
-                                <input type="submit" value="Comprar" onclick="sumaCarro(baseDatoTorta[${i}])">
+                                <input type="submit" value="Comprar" id="btnInp" onclick="sumaCarro(baseDatoTorta[${i}])">
                             </div>
             </li>`
 }
-lista.innerHTML = printHtml;
+
+$("#ulDefinitivo").html(printHtml)
+/* lista.innerHTML = printHtml; */
+/* 
+$("#btnInp").on("click", () =>{}) */
+
+
+
+
+
+
+
+
 
 
 const sumaCarro = (torta) =>{
