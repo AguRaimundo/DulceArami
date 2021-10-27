@@ -134,8 +134,8 @@ for(let i = 0; i < baseDatoTorta.length; i++){
 
 $("#ulDefinitivo").html(printHtml)
 /* lista.innerHTML = printHtml; */
-/* 
-$("#btnInp").on("click", () =>{}) */
+
+
 
 
 
