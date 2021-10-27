@@ -131,7 +131,19 @@ for(let i = 0; i < baseDatoTorta.length; i++){
                             <div><input type="number" value="0" id="input${baseDatoTorta[i].id}"></div>
             </li>`
 }
-lista.innerHTML = printHtml;
+
+$("#ulDefinitivo").html(printHtml)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
