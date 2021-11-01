@@ -50,7 +50,7 @@ class Carrito{
 
             agregarProducto = (torta) =>{
             let inputCant = document.getElementById(`input${torta.id}`).value
-            console.log("gordatonta",inputCant)
+            console.log(inputCant)
             if(torta.isAvailable() && torta.getStock()>=inputCant && inputCant > 0){
                 torta.stock -= inputCant;
                 console.log("veo el producto", this.productos)
@@ -61,6 +61,7 @@ class Carrito{
                 console.log("a ver",carro)
                 localStorage.setItem("carrito",JSON.stringify(this.productos));
             }else{
+
                 if(!torta.isAvailable()){
                     alert("No hay Stock Disponible")
                 }
@@ -68,8 +69,13 @@ class Carrito{
                     alert("No hay Suficiente Stock Disponible")
                 }
                 if(inputCant<=0){
-                    alert("Error")
-                }
+                    if($(`#pError${torta.id}`).is(":visible")){
+                        return;
+                    }
+                    $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No seleccionaste una torta </p>`);
+                    $("p").fadeIn("slow")
+                    }
+                
             }
         }
         quitarProducto = (torta) => {
@@ -128,11 +134,18 @@ for(let i = 0; i < baseDatoTorta.length; i++){
                                 <input type="submit" value="Comprar" onclick="carro.agregarProducto(baseDatoTorta[${i}])">
                                 <button type="button" class="btn btn-danger" onclick="carro.quitarProducto(baseDatoTorta[${i}])">Quitar</button>
                             </div>
-                            <div><input type="number" value="0" id="input${baseDatoTorta[i].id}"></div>
+                            <div id="cantValue">
+                            <input type="number" value="0" id="input${baseDatoTorta[i].id}"> 
+                            <div id="parraf${baseDatoTorta[i].id}"></div>
+                            </div>
+
+                            
             </li>`
 }
 
 $("#ulDefinitivo").html(printHtml)
+
+
 
 
 
