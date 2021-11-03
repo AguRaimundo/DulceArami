@@ -1,4 +1,4 @@
-const urlGet = "https://api.jsonbin.io/b/6181ae6caa02be1d4462cb17/3"
+const urlGet = "https://api.jsonbin.io/b/6181ae6caa02be1d4462cb17/6"
 
 class Tortas{
     constructor(nombre, descripcion, img, ingredientes, precio, stock, id){
@@ -24,6 +24,7 @@ class Tortas{
             headers:{
                 'secret-key':'$2b$10$5v73AYaqW5XBD2NvX3bpU.orFV2GV.KjmkgzveADdmdF.0tmgFGZm'},
                 success: (response) =>{
+                    console.log(response)
                     for(let i = 0; i < response.length; i++){
                         let torta = new Tortas(response[i].nombre, response[i].descripcion, response[i].img, response[i].ingredientes, response[i].precio, response[i].stock, response[i].id)
                     baseDatoTorta.push(torta)
