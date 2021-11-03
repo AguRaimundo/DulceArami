@@ -1,4 +1,4 @@
-const urlGet = "https://api.jsonbin.io/b/6181ae6caa02be1d4462cb17/2"
+const urlGet = "https://api.jsonbin.io/b/6181ae6caa02be1d4462cb17/3"
 
 class Tortas{
     constructor(nombre, descripcion, img, ingredientes, precio, stock, id){
