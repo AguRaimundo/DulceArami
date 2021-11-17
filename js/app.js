@@ -59,25 +59,6 @@ class Tortas{
         }})
 let baseDatoTorta = [];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Carrito{
     constructor(productos,total){
         this.productos = productos

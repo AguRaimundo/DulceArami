@@ -1,3 +1,9 @@
+//traer del storage la torta
+//color a las fallas/errores
+//avisar cuando se compro/retiro torta
+//validacion de contacto
+
+
 $(document).ready( async () =>{
     await $.ajax({
         url: urlGet,
