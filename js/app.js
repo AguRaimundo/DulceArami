@@ -81,10 +81,21 @@ class Carrito{
             }else{
 
                 if(!torta.isAvailable()){
-                    alert("No hay Stock Disponible")
+                    if($(`#pError${torta.id}`).is(":visible")){
+                        return;
+                    }
+                    $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No hay stock Disponible </p>`);
+                    $("p").fadeIn("slow")
+                    $("p").fadeOut("slow")
+                    
                 }
                 if(torta.getStock()<inputCant){
-                    alert("No hay Suficiente Stock Disponible")
+                    if($(`#pError${torta.id}`).is(":visible")){
+                        return;
+                    }
+                    $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No hay suficiente stock Disponible </p>`);
+                    $("p").fadeIn("slow")
+                    $("p").fadeOut("slow")
                 }
                 if(inputCant<=0){
                     if($(`#pError${torta.id}`).is(":visible")){
@@ -92,8 +103,11 @@ class Carrito{
                     }
                     $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No seleccionaste una torta </p>`);
                     $("p").fadeIn("slow")
+                    if(inputCant>=0){
+                        $("p").fadeOut("slow")
                     }
-                
+                    
+                }                
             }
         }
         quitarProducto = (torta) => {
