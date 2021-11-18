@@ -137,7 +137,6 @@ let queHaySt = localStorage.getItem("carrito");
 if(queHaySt){
     let total = 0;
     let prueba = JSON.parse(queHaySt);
-    console.log("veola prueba",prueba)
     for(let t = 0; t<prueba.length; t++){
         total+=prueba[t].precio
     }
