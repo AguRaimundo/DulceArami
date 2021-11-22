@@ -6,7 +6,7 @@
 const checkTorta = (torta,arregloTorta) =>{
     
     for(let k = 0; k < arregloTorta.length; k++){
-        console.log(torta,arregloTorta[k])
+        /* console.log(torta,arregloTorta[k]) */
         if(torta.id === arregloTorta[k].cake.id){
             return true;
         }
@@ -14,8 +14,8 @@ const checkTorta = (torta,arregloTorta) =>{
     return false;
 }
 const getTortaIndice = (productos,torta) =>{
-    console.log("veo productos",productos)
-    console.log("veo torta",torta)
+    /* console.log("veo productos",productos)
+    console.log("veo torta",torta) */
     return productos.findIndex((elemento) => torta.id === elemento.cake.id)
 }
 const crearSumario = (contenido) =>{
@@ -44,13 +44,9 @@ for(let i = 0; i < carrito.length; i++){
     printHtml += `
     <div class="container d-lg-flex">
     <div class="box-1 bg-light user">
-        <div class="d-flex align-items-center mb-3"> <img src="${carrito[i].cake.img}" class="pic rounded-circle" alt="">
-            <p class="ps-2 name">Carta</p>
-        </div>
         <div class="box-inner-1 pb-3 mb-3 ">
             <div class="d-flex justify-content-between mb-3 userdetails">
-                <p class="fw-bold">Lightroom Presets</p>
-                <p class="fw-lighter"><span class="fas fa-dollar-sign"></span>33.00+</p>
+                <p class="fw-bold">Tu producto</p>
             </div>
             <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel" data-bs-interval="2000">
                 <div class="carousel-indicators"> <button type="button" data-bs-target="#my" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> <button type="button" data-bs-target="#my" data-bs-slide-to="1" aria-label="Slide 2"></button> <button type="button" data-bs-target="#my" data-bs-slide-to="2" aria-label="Slide 3"></button> </div>
@@ -68,7 +64,7 @@ for(let i = 0; i < carrito.length; i++){
             <div class="radiobtn"> <input type="radio" name="box" id="one"> <input type="radio" name="box" id="two"> <input type="radio" name="box" id="three"> <label for="one" class="box py-2 first">
                     <div class="d-flex align-items-start"> <span class="circle"></span>
                         <div class="course">
-                            <div class="d-flex align-items-center justify-content-between mb-2"> <span class="fw-bold"> Collection 01 </span> <span class="fas fa-dollar-sign">29</span> </div> <span>10 x Presets. Released in 2018</span>
+                            <div class="d-flex align-items-center justify-content-between mb-2"> <span class="fw-bold">${carrito[i].cake.nombre}</span> <span class="fas fa-dollar-sign">29</span> </div> <span>10 x Presets. Released in 2018</span>
                         </div>
                     </div>
                 </label> <label for="two" class="box py-2 second">
@@ -94,7 +90,7 @@ for(let i = 0; i < carrito.length; i++){
             </div>
             <form action="">
                 <div class="mb-3">
-                    <p class="dis fw-bold mb-2">Email</p> <input class="form-control" type="email" value="luke@skywalker.com">
+                    <p class="dis fw-bold mb-2">Email</p> <input class="form-control" type="email" value="">
                 </div>
                 <div>
                     <p class="dis fw-bold mb-2">Datos de Tarjeta</p>
@@ -129,20 +125,8 @@ for(let i = 0; i < carrito.length; i++){
                             <option value="laRioja">La Rioja</option>
                             <option value="catamarca">Catamarca</option>
                         </select>
-                        /* <div class="d-flex"> <input class="form-control zip" type="text" placeholder="ZIP"> <input class="form-control state" type="text" placeholder="State"> </div>
-                        <div class=" my-3">
-                            <p class="dis fw-bold mb-2">VAT Number</p>
-                            <div class="inputWithcheck"> <input class="form-control" type="text" value="GB012345B9"> <span class="fas fa-check"></span> </div>
-                        </div> */
+                        
                         <div class="d-flex flex-column dis">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <p>Sub total</p>
-                                <p><span class="fas fa-dollar-sign"></span>33.00</p>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <p>IVA<span>(21%)</span></p>
-                                <p><span class="fas fa-dollar-sign"></span>2.80</p>
-                            </div>
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <p class="fw-bold">Total</p>
                                 <p class="fw-bold"><span class="fas fa-dollar-sign"></span>35.80</p>
@@ -166,3 +150,22 @@ lista.innerHTML = printHtml;
 
 
 
+/* <div class="d-flex align-items-center mb-3"> <img src="${carrito[i].cake.img}" class="pic rounded-circle" alt="">
+            <p class="ps-2 name">Carta</p>
+        </div>parte 1
+        <p class="fw-lighter"><span class="fas fa-dollar-sign"></span>33.00+</p> parte 2 tu productos
+        <div class="d-flex"> <input class="form-control zip" type="text" placeholder="ZIP"> <input class="form-control state" type="text" placeholder="State"> </div>
+                        <div class=" my-3">
+                            <p class="dis fw-bold mb-2">VAT Number</p>
+                            <div class="inputWithcheck"> <input class="form-control" type="text" value="GB012345B9"> <span class="fas fa-check"></span> </div>
+                        </div> parte 3
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                <p>Sub total</p>
+                                <p><span class="fas fa-dollar-sign"></span>33.00</p>
+                            </div>
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                <p>IVA<span>(21%)</span></p>
+                                <p><span class="fas fa-dollar-sign"></span>2.80</p>
+                            </div> parte 4
+        
+*/

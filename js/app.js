@@ -25,7 +25,7 @@ class Tortas{
             headers:{
                 'secret-key':'$2b$10$5v73AYaqW5XBD2NvX3bpU.orFV2GV.KjmkgzveADdmdF.0tmgFGZm'},
                 success: (response) =>{
-                    console.log(response)
+                    /* console.log(response) */
                     for(let i = 0; i < response.length; i++){
                         let torta = new Tortas(response[i].nombre, response[i].descripcion, response[i].img, response[i].ingredientes, response[i].precio, response[i].stock, response[i].id)
                     baseDatoTorta.push(torta)
@@ -68,7 +68,7 @@ class Carrito{
 
             agregarProducto = (torta) =>{
             let inputCant = document.getElementById(`input${torta.id}`).value
-            console.log(inputCant)
+            /* console.log(inputCant) */
             if(torta.isAvailable() && torta.getStock()>=inputCant && inputCant > 0){
                 torta.stock -= inputCant;
                 console.log("veo el producto", this.productos)
@@ -76,7 +76,7 @@ class Carrito{
                     this.productos.push(torta);
                 }
                 this.total += torta.getPrecio() * inputCant;
-                console.log("a ver",carro)
+                /* console.log("a ver",carro) */
                 localStorage.setItem("carrito",JSON.stringify(this.productos));
             }else{
 
@@ -111,7 +111,7 @@ class Carrito{
             }
         }
         quitarProducto = (torta) => {
-            console.log(torta)
+            /* console.log(torta) */
             let contentAux= [];
             let index = getTortaIndice(this.productos,torta);
             for(let k=0; k<this.productos.length; k++) {
@@ -144,7 +144,7 @@ if(queHaySt){
 }else{
     carro = new Carrito([],0);
 }
-console.log("veo el carro",carro)
+/* console.log("veo el carro",carro) */
 let lista = document.getElementById("ulDefinitivo")
 
 //A terminar: retirar + de 1 torta a la vez y generar el checkout.html mediante js para la entrega final
