@@ -25,7 +25,7 @@ class Tortas{
             headers:{
                 'secret-key':'$2b$10$5v73AYaqW5XBD2NvX3bpU.orFV2GV.KjmkgzveADdmdF.0tmgFGZm'},
                 success: (response) =>{
-                    /* console.log(response) */
+                    
                     for(let i = 0; i < response.length; i++){
                         let torta = new Tortas(response[i].nombre, response[i].descripcion, response[i].img, response[i].ingredientes, response[i].precio, response[i].stock, response[i].id)
                     baseDatoTorta.push(torta)
@@ -68,15 +68,17 @@ class Carrito{
 
             agregarProducto = (torta) =>{
             let inputCant = document.getElementById(`input${torta.id}`).value
-            /* console.log(inputCant) */
+            
             if(torta.isAvailable() && torta.getStock()>=inputCant && inputCant > 0){
                 torta.stock -= inputCant;
-                console.log("veo el producto", this.productos)
                 for(let j=0; j<inputCant; j++){
                     this.productos.push(torta);
+
                 }
                 this.total += torta.getPrecio() * inputCant;
-                /* console.log("a ver",carro) */
+                $(`#parraf${torta.id}`).prepend(`<p id="pCompra${torta.id}" style="display: none" class="compraP"> Compraste ${torta.nombre} </p>`);
+                    $(`#pCompra${torta.id}`).fadeIn("slow")
+                    $(`#pCompra${torta.id}`).fadeOut("slow")
                 localStorage.setItem("carrito",JSON.stringify(this.productos));
             }else{
 
@@ -85,8 +87,8 @@ class Carrito{
                         return;
                     }
                     $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No hay stock Disponible </p>`);
-                    $("p").fadeIn("slow")
-                    $("p").fadeOut("slow")
+                    $(`#pError${torta.id}`).fadeIn("slow")
+                    $(`#pError${torta.id}`).fadeOut("slow")
                     
                 }
                 if(torta.getStock()<inputCant){
@@ -94,24 +96,22 @@ class Carrito{
                         return;
                     }
                     $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No hay suficiente stock Disponible </p>`);
-                    $("p").fadeIn("slow")
-                    $("p").fadeOut("slow")
+                    $(`#pError${torta.id}`).fadeIn("slow")
+                    $(`#pError${torta.id}`).fadeOut("slow")
                 }
                 if(inputCant<=0){
                     if($(`#pError${torta.id}`).is(":visible")){
                         return;
                     }
                     $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No seleccionaste una torta </p>`);
-                    $("p").fadeIn("slow")
-                    if(inputCant>=0){
-                        $("p").fadeOut("slow")
-                    }
+                    $(`#pError${torta.id}`).fadeIn("slow")
+                    $(`#pError${torta.id}`).fadeOut("slow")
                     
                 }                
             }
         }
         quitarProducto = (torta) => {
-            /* console.log(torta) */
+            
             let contentAux= [];
             let index = getTortaIndice(this.productos,torta);
             for(let k=0; k<this.productos.length; k++) {
@@ -144,7 +144,14 @@ if(queHaySt){
 }else{
     carro = new Carrito([],0);
 }
-/* console.log("veo el carro",carro) */
+
 let lista = document.getElementById("ulDefinitivo")
 
-//A terminar: retirar + de 1 torta a la vez y generar el checkout.html mediante js para la entrega final
+const eventoClick = () =>{
+    if(carro.total > 0){
+        window.location.href='checkout.html'
+        console.log(eventoClick)
+    }
+}
+
+
