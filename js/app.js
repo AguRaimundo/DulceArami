@@ -130,7 +130,6 @@ class Carrito{
     const getTortaIndice = (productos,torta) =>{
         return productos.findIndex((elemento) => torta.id === elemento.id)
     }
-
 let carro;
 let queHaySt = localStorage.getItem("carrito");
 
@@ -150,7 +149,6 @@ let lista = document.getElementById("ulDefinitivo")
 const eventoClick = () =>{
     if(carro.total > 0){
         window.location.href='checkout.html'
-        console.log(eventoClick)
     }
 }
 

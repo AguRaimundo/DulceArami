@@ -1,6 +1,3 @@
-
-//validacion de contacto
-
 const checkTorta = (torta,arregloTorta) =>{
     
     for(let k = 0; k < arregloTorta.length; k++){
