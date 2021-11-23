@@ -31,18 +31,18 @@ class Tortas{
                     baseDatoTorta.push(torta)
                     }
                 }
-        })
-        let printHtml = ``
-        for(let i = 0; i < baseDatoTorta.length; i++){
-            printHtml += `
-                    <li class="list-group-item">
-                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                            <div class="media-body order-2 order-lg-1">
-                                <h5 class="mt-0 font-weight-bold mb-2">${baseDatoTorta[i].nombre}</h5>
-                                    <p class="font-italic text-muted mb-0 small">⁣${baseDatoTorta[i].descripcion}</p>
-                                        <div class="d-flex align-items-center justify-content-between mt-1">
-                                            <h6 class="font-weight-bold my-2">${baseDatoTorta[i].precio}</h6>
-                                        </div>
+})
+let printHtml = ``
+    for(let i = 0; i < baseDatoTorta.length; i++){
+        printHtml += `
+                <li class="list-group-item">
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <div class="media-body order-2 order-lg-1">
+                            <h5 class="mt-0 font-weight-bold mb-2">${baseDatoTorta[i].nombre}</h5>
+                                <p class="font-italic text-muted mb-0 small">⁣${baseDatoTorta[i].descripcion}</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-1">
+                                        <h6 class="font-weight-bold my-2">${baseDatoTorta[i].precio}</h6>
+                                    </div>
                             </div>
                             <img src="${baseDatoTorta[i].img}" alt="Torta Brownie" width="200" class="ml-lg-5 order-1 order-lg-2">
                             </div>
@@ -55,8 +55,8 @@ class Tortas{
                                         <button type="button" class="btn btn-danger" onclick="carro.quitarProducto(baseDatoTorta[${i}])">Quitar</button>
                                     </div>
                     </li>`
-                    $("#ulDefinitivo").html(printHtml)
-        }})
+    $("#ulDefinitivo").html(printHtml)
+}})
 let baseDatoTorta = [];
 //checkTorta recorre el arreglo e indica si hay o no un elemento
 const checkTorta = (torta,arregloTorta) =>{    
@@ -71,28 +71,26 @@ const checkTorta = (torta,arregloTorta) =>{
 //Metodos : agregarProducto agrega N elementos al carrito. quitarProducto saca un elemento seleccionado del carrito.
 class Carrito{
     constructor(productos,total){
-        this.productos = productos
-        this.total = total
-        }
-        getTotal = () => {return this.total}
-
-            agregarProducto = (torta) =>{
+    this.productos = productos
+    this.total = total
+    }
+    getTotal = () => {return this.total}
+        agregarProducto = (torta) =>{
             let inputCant = document.getElementById(`input${torta.id}`).value
-            
-            if(torta.isAvailable() && torta.getStock()>=inputCant && inputCant > 0){
+                if(torta.isAvailable() && torta.getStock()>=inputCant && inputCant > 0){
                 torta.stock -= inputCant;
-                for(let j=0; j<inputCant; j++){
+                    for(let j=0; j<inputCant; j++){
                     this.productos.push(torta);
-
-                }
+                    }
                 this.total += torta.getPrecio() * inputCant;
                 $(`#parraf${torta.id}`).prepend(`<p id="pCompra${torta.id}" style="display: none" class="compraP"> Compraste ${torta.nombre} </p>`);
                     $(`#pCompra${torta.id}`).fadeIn("slow")
                     $(`#pCompra${torta.id}`).fadeOut("slow")
                 localStorage.setItem("carrito",JSON.stringify(this.productos));
-            }else{
-
-                if(!torta.isAvailable()){
+            }
+                    else
+                        {
+                    if(!torta.isAvailable()){
                     if($(`#pError${torta.id}`).is(":visible")){
                         return;
                     }
@@ -100,28 +98,26 @@ class Carrito{
                     $(`#pError${torta.id}`).fadeIn("slow")
                     $(`#pError${torta.id}`).fadeOut("slow")
                     
-                }
-                if(torta.getStock()<inputCant){
+                    }
+                    if(torta.getStock()<inputCant){
                     if($(`#pError${torta.id}`).is(":visible")){
                         return;
                     }
                     $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No hay suficiente stock Disponible </p>`);
                     $(`#pError${torta.id}`).fadeIn("slow")
                     $(`#pError${torta.id}`).fadeOut("slow")
-                }
-                if(inputCant<=0){
+                    }
+                    if(inputCant<=0){
                     if($(`#pError${torta.id}`).is(":visible")){
                         return;
                     }
                     $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="errorP"> No seleccionaste una torta </p>`);
                     $(`#pError${torta.id}`).fadeIn("slow")
                     $(`#pError${torta.id}`).fadeOut("slow")
-                    
-                }                
-            }
-        }
-        
-        quitarProducto = (torta) => {
+        }                
+    }
+}
+quitarProducto = (torta) => {
             
             if(checkTorta(torta,this.productos)){
             let contentAux= [];
@@ -144,11 +140,11 @@ class Carrito{
                     $(`#pError${torta.id}`).fadeOut("slow")
             }
         }
-    };
+};
 
 
-    //getTortaIndice devuelve la posicion de la torta en el listado
-    const getTortaIndice = (productos,torta) =>{
+//getTortaIndice devuelve la posicion de la torta en el listado
+const getTortaIndice = (productos,torta) =>{
         return productos.findIndex((elemento) => torta.id === elemento.id)
     }
 let carro;
