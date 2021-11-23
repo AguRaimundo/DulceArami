@@ -23,5 +23,26 @@
 }
 .btCompra{
     display: flex;
-    justify-content: flex-end
+    justify-content: space-between;
+    margin-top: 5px; 
+}
+
+.errorP{
+    color :red;
+    font-size: 15px;
+}
+
+.compraP{
+    color: green;
+    font-size: 15px;
+}
+
+.quitarP{
+    color:green;
+    font-size: 15px;
+}
+
+.quitarPE{
+    color: red;
+    font-size: 15px;
 }

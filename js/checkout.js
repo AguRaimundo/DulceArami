@@ -1,3 +1,4 @@
+//checkTorta recorre el arreglo e indica si hay o no un elemento
 const checkTorta = (torta,arregloTorta) =>{
     
     for(let k = 0; k < arregloTorta.length; k++){
@@ -7,8 +8,8 @@ const checkTorta = (torta,arregloTorta) =>{
     }
     return false;
 }
+//getTortaIndice devuelve la posicion de la torta en el listado
 const getTortaIndice = (productos,torta) =>{
-    
     return productos.findIndex((elemento) => torta.id === elemento.cake.id)
 }
 
@@ -38,7 +39,7 @@ const calculoTotal = (carrito) =>{
     return suma
 }
 
-
+//Genero el HTML
 let lista = document.getElementById("checkout")
 $(document).ready(()=>{
     let almacenamiento = JSON.parse(localStorage.getItem('carrito'))

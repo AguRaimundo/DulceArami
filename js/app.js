@@ -1,4 +1,4 @@
-// Traigo el url de la api, creo la clase tortas y llamo el array de la api
+// Traigo el url de la api, creo la clase tortas y llamo el array de la api generando el HTML.
 const urlGet = "https://api.jsonbin.io/b/6181ae6caa02be1d4462cb17/6"
 
 class Tortas{
@@ -46,19 +46,29 @@ class Tortas{
                             </div>
                             <img src="${baseDatoTorta[i].img}" alt="Torta Brownie" width="200" class="ml-lg-5 order-1 order-lg-2">
                             </div>
-                                    <div class="btCompra">
-                                        <input type="submit" value="Comprar" onclick="carro.agregarProducto(baseDatoTorta[${i}])">
-                                        <button type="button" class="btn btn-danger" onclick="carro.quitarProducto(baseDatoTorta[${i}])">Quitar</button>
-                                    </div>
                                     <div id="cantValue">
                                     <input type="number" value="0" id="input${baseDatoTorta[i].id}"> 
                                     <div id="parraf${baseDatoTorta[i].id}"></div>
+                                    </div>
+                                    <div class="btCompra">
+                                        <input type="submit" value="Comprar" onclick="carro.agregarProducto(baseDatoTorta[${i}])">
+                                        <button type="button" class="btn btn-danger" onclick="carro.quitarProducto(baseDatoTorta[${i}])">Quitar</button>
                                     </div>
                     </li>`
                     $("#ulDefinitivo").html(printHtml)
         }})
 let baseDatoTorta = [];
-
+//checkTorta recorre el arreglo e indica si hay o no un elemento
+const checkTorta = (torta,arregloTorta) =>{    
+    for(let k = 0; k < arregloTorta.length; k++){
+        if(torta.id === arregloTorta[k].id){
+            return true;
+        }
+    }
+    return false;
+}
+// Clase carrito: LLevamos un array para el contenido. Y un valor que es el total del mismo.
+//Metodos : agregarProducto agrega N elementos al carrito. quitarProducto saca un elemento seleccionado del carrito.
 class Carrito{
     constructor(productos,total){
         this.productos = productos
@@ -110,29 +120,40 @@ class Carrito{
                 }                
             }
         }
+        
         quitarProducto = (torta) => {
             
+            if(checkTorta(torta,this.productos)){
             let contentAux= [];
             let index = getTortaIndice(this.productos,torta);
             for(let k=0; k<this.productos.length; k++) {
                 if(k!==index) {
                 contentAux.push(this.productos[k]);
-                } 
+                $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="quitarP"> Quitaste ${torta.nombre} </p>`);
+                    $(`#pError${torta.id}`).fadeIn("slow")
+                    $(`#pError${torta.id}`).fadeOut("slow")} 
             }
             torta.stock++;
             this.productos = contentAux;
             this.total = this.total - torta.getPrecio()
             localStorage.setItem("carrito",JSON.stringify(this.productos));
-            
+            }
+            else{
+                $(`#parraf${torta.id}`).prepend(`<p id="pError${torta.id}" style="display: none" class="quitarPE"> No es posible quitar ${torta.nombre} </p>`);
+                    $(`#pError${torta.id}`).fadeIn("slow")
+                    $(`#pError${torta.id}`).fadeOut("slow")
+            }
         }
     };
+
+
     //getTortaIndice devuelve la posicion de la torta en el listado
     const getTortaIndice = (productos,torta) =>{
         return productos.findIndex((elemento) => torta.id === elemento.id)
     }
 let carro;
 let queHaySt = localStorage.getItem("carrito");
-
+//Suma la torta que hay en el storage/carrito
 if(queHaySt){
     let total = 0;
     let prueba = JSON.parse(queHaySt);
@@ -143,9 +164,8 @@ if(queHaySt){
 }else{
     carro = new Carrito([],0);
 }
-
 let lista = document.getElementById("ulDefinitivo")
-
+//EventoClick permite ir hacia el checkout unicamente si hay algo en el carro
 const eventoClick = () =>{
     if(carro.total > 0){
         window.location.href='checkout.html'
